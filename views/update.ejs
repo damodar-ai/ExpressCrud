@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+        .maindiv{
+            border-radius: 10px;
+            padding-top: 2%;
+            padding-left: 10%;
+            padding-right: 12%;
+            margin-top: 10%;
+            margin-left: 20%;
+            margin-right: 15%;
+            height: 500px;
+            width: 60%;
+            background-color: black;
+            color: aliceblue;
+        }
+        body{
+            background-color: aqua;
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="maindiv">
+        <h2 class = "text-warning">Update The Details Of Students</h2><br>
+             <form action = "/update/<%= user.id %>" method="post">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Name Of Students</label>
+                  <input type="text" value = "<%= user.name  %>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name = "name">
+                  <div id="emailHelp" class="form-text">Enter The Name Of Students.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Email</label>
+                  <input type="text" value = "<%= user.mail  %>" class="form-control" name = "mail" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Age</label>
+                    <input type="text" value = "<%= user.age  %>" class="form-control" name = "age" id="exampleInputPassword1">
+                  </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+              </form>
+        </form>
+  </div>
+
+
+</body>
+</html>

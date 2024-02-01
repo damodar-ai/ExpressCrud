@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+        body{
+            text-align: center;
+            background-color: bisque;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 5%;
+            padding-left: 5%;
+            padding-right: 5%;
+            
+        }
+        .maindiv{
+            border-radius: 25px;
+            padding: 2%;
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-bottom: 2%;
+            margin-left: 20%;
+            margin-right: 20%;
+            height: 10%;
+            width: %;
+            background-color: black;
+            color: aliceblue;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+
+        }
+        th,td {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <h1 style = "color: blue; text-align: center;">Student Data Of NSTI (W) Patna</h1>
+    <h3><%= title %></h3>
+    <% if (students!= "")
+    {
+        %>
+        <table>
+            <tr>
+                <th>Roll No.</th>
+                <th>Name</th>
+                <th>Mail</th>
+                <th>Age</th>
+                <th>Operation</th>
+            </tr>
+            <%students.forEach ((students , index) => {%>
+                <tr>
+                  <td><%= index+1 %></td> 
+                  <td><%= students.name %></td>
+                  <td><%= students.mail%></td>
+                  <td><%= students.age %></td>  
+                  <td>
+              
+                    <a href="/update/<%= students._id %>" class="btn btn-success" role="button">Update</a>
+                    <a href="/delete/<%= students.id%>" class="btn btn-danger" role="button">Delete</a>
+                 
+                </tr><%
+            })%>
+            
+        </table>
+        <br><br><br><br>
+        <div class="maindiv">
+          <h3>Register Students From Here...</h3>
+        <a href="./register" class="btn btn-info" role="button">Register</a>
+        
+    </div>
+
+
+    <%}
+    
+    %>
+
+</body>
+</html>
